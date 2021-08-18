@@ -9,7 +9,7 @@ namespace HelloDungeon
         public void Run()
         {
             string charactherClass;
-            int power = 25;
+            int power = 0;
 
             // Welcome Game Screen
             string welcome = ("Welcome to RPG");
