@@ -18,7 +18,7 @@ namespace HelloDungeon
             Console.WriteLine("Please enter your name.");
             name = Console.ReadLine();
 
-            // Display: Hello "username"
+            // Display: Hello "given name"
             Console.WriteLine("Hello " + name);
             Console.Read();
 
