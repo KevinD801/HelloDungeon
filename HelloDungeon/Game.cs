@@ -24,11 +24,11 @@ namespace HelloDungeon
 
 
             // Given Name, + background info
-            string charactherName = " the Fool Arcana new beginnings, having faith in the future, " +
+            string backgroundInfo = " the Fool Arcana new beginnings, having faith in the future, " +
                 "being inexperienced, not knowing what to expect, having beginner's luck, " +
                 "improvisation and believing in the universe";
             
-            Console.WriteLine(name + "," + charactherName);
+            Console.WriteLine(name + "," + backgroundInfo);
             
 
 
