@@ -111,6 +111,8 @@ namespace HelloDungeon
             }
             Console.Clear();
 
+
+            // Display Characther Stats 
             Console.WriteLine("Your Characther Stats\n");
             Console.WriteLine("Name: " + name);
             Console.WriteLine("Class: " + charactherClass);
@@ -121,26 +123,25 @@ namespace HelloDungeon
             Console.Clear();
 
 
-            // Encounter 
+            // Riddle Encounter 
             int numberOfAttempts = 4;
-            Console.WriteLine("solve the riddle you have" + numberOfAttempts + "attempts ");
+            
             for (int i = 0; i < numberOfAttempts; i++)
             {
                 Console.Clear();
-                Console.WriteLine("broken");
+                Console.WriteLine("Solve the riddle you have " + numberOfAttempts + " attempts. ");
+                Console.WriteLine("Name something that is broken, edible and great protein.");
                 int attemptRemaining = numberOfAttempts - i;
                 Console.WriteLine("Attempts Remaining: " + attemptRemaining);
                 input = Console.ReadLine();
 
                 if (input == "egg")
                 {
-                    Console.WriteLine("Congrats! You're gained coins");
+                    Console.WriteLine("Congrats! You're gained rotten egg...");
                     break;
                 }
 
                 Console.WriteLine("Incorrect! The enemy laughs at you! Show off middle finger then leave.");
-
-               
 
             }
 
@@ -148,39 +149,45 @@ namespace HelloDungeon
             Console.Clear();
 
 
+
+            // Imp encounter
             Console.WriteLine("You encounter imp!!" +
-                "\n The imp slaying rabbit but you can defeat imp while he distracted." +
+                "\n The Imp slaying rabbit but you can defeat imp while he distracted." +
                 "\n 1. Kill Imp 2. Flee");
 
 
             int numberOfWait = 2;
+
+            // Decision and countdown for 2 turns
             for (int i = 0; i < numberOfWait; i++)
             {
                 
-                Console.WriteLine("If wait long enough imp ");
+                Console.WriteLine("If wait long enough imp it may kill you. ");
                 input = Console.ReadLine();
 
                 if (input == "1")
                 {
-                    Console.WriteLine("You killed imp.");
-
+                    Console.WriteLine("You killed Imp.");
+                    break;
                 }
                 else if (input == "2")
                 {
                     Console.WriteLine("You fled away from combat.");
+                    break; 
                 }
-            } 
+
+            }
             
-
-
             // Game Over
             bool gameOver = true;
 
             if (playerHealth < 0)
             {
-                gameOver = playerHealth < 0;
+                gameOver = playerHealth < 0; 
                 Console.WriteLine("You died");
+
             }
+            
         }
     }
 }
