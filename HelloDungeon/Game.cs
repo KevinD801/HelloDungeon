@@ -11,6 +11,9 @@ namespace HelloDungeon
             string charactherClass;
             int playerPower = 0;
 
+            // Game Over
+            bool gameOver = false;
+
             // Welcome Game Screen
             string welcome = ("Welcome to Quick RPG");
             Console.WriteLine(welcome);
@@ -44,7 +47,6 @@ namespace HelloDungeon
             playerHealth = playerHealth + healthRegen;
 
 
-
             //IDK is code below
             ///int currentArea = 1;
 
@@ -53,6 +55,41 @@ namespace HelloDungeon
             charactherClass = input;
 
             bool validInputReceived = false;
+
+
+            // Game Over
+
+            // Display only 1 "Do you wish to restart?"
+            for (int i = 0; i < 1; i++)
+            {
+                Console.WriteLine("Do you wish to restart?");
+
+                if (input == "1")
+                {
+                    Console.WriteLine("Press '1' to restart or close down the game.");
+                    Console.ReadLine();
+                    break;
+                }
+
+                else if (playerHealth <= 0)
+                {
+                    gameOver = playerHealth <= 0;
+                    Console.WriteLine("You died");
+                }
+            }
+
+            // while (!gameOver)
+            //   {
+            //   Encounter();
+            //   if (!gameOver)
+            //       {
+            //       Encounter2();
+            //       Encounter3();
+            //       Encounter4();
+            //        }
+            //    DisplayRestartMenu();
+
+            // }
 
             while (validInputReceived == false)
             {
@@ -115,21 +152,23 @@ namespace HelloDungeon
                     Console.WriteLine("Invalid Input! Hint: Please use type out this example '1' / 'Wizard'  as you continue along this game.");
                     Console.ReadKey();
                 }
-                
+
+                Console.Clear();
+
+
+
+
+                // Display Characther Stats 
+                Console.WriteLine("Your Characther Stats\n");
+                Console.WriteLine("Name: " + name);
+                Console.WriteLine("Class: " + charactherClass);
+                Console.WriteLine("Health: " + playerHealth);
+                Console.WriteLine("Power: " + playerPower);
+
+                Console.ReadKey();
                 Console.Clear();
             }
 
-
-
-            // Display Characther Stats 
-            Console.WriteLine("Your Characther Stats\n");
-            Console.WriteLine("Name: " + name);
-            Console.WriteLine("Class: " + charactherClass);
-            Console.WriteLine("Health: " + playerHealth);
-            Console.WriteLine("Power: " + playerPower);
-
-            Console.ReadKey();
-            Console.Clear();
 
 
             // Riddle Encounter 
@@ -150,15 +189,13 @@ namespace HelloDungeon
                 if (input == "egg")
                 {
                     Console.WriteLine("Congrats! You're gained rotten egg...");
-                    break;
+
                 }
 
                 Console.WriteLine("Incorrect! The enemy laughs at you! Show off middle finger then leave.");
 
             }
 
-            Console.ReadLine();
-            Console.Clear();
 
 
 
@@ -190,10 +227,12 @@ namespace HelloDungeon
                     Console.ReadLine();
                     break;
                 }
+                gameOver = true;
                 Console.WriteLine("You died by Imp");
                 Console.ReadLine();
 
             }
+
 
             // Riddle Encounter 
 
@@ -204,7 +243,7 @@ namespace HelloDungeon
             {
                 Console.Clear();
                 Console.WriteLine("Solve the know about this movie you have before I will kill you!!! " + numberOfAttempts + " attempts. ");
-                Console.WriteLine("Name something that is classic horror with hockey mask.");
+                Console.WriteLine("Name something that is classic horror with hockey mask. He getting impatience with you.");
                 int attemptRemaining = numberOfAttempts - i;
                 Console.WriteLine("Attempts Remaining: " + attemptRemaining);
                 input = Console.ReadLine();
@@ -216,15 +255,20 @@ namespace HelloDungeon
                     Console.ReadLine();
                     break;
                 }
-               
-                    Console.WriteLine("You died by Slasher");
-                    Console.ReadLine();
 
-                
-                
+                gameOver = true;
+                Console.WriteLine("You died by Slasher");
+                Console.ReadLine();
+
+
+
 
             }
             Console.Clear();
+
+
+
+
 
             // Troll encounter
             Console.WriteLine("You encounter bridge Troll. " +
@@ -232,10 +276,10 @@ namespace HelloDungeon
                 "\n If wait long enough Troll it may force you to leave bridge. " +
                 "\n" +
                 "\n 1. Kill Troll 2. Pay Troll ");
-           
-            
-            
-            // Player Decision to kill or pay Troll and in 1 turns if player wait for Troll doing something it will ask you leave this place.
+
+
+
+            // Player Decision to kill or pay Troll and in 1 turns if player wait for Troll doing something it will force you leave this place.
             numberOfWait = 1;
             for (int i = 0; i < numberOfWait; i++)
             {
@@ -259,19 +303,19 @@ namespace HelloDungeon
                 Console.ReadLine();
 
             }
-            
+
+
+
+
+
+
+
 
             Console.Clear();
 
 
-            // Game Over
-            bool gameOver = true;
 
-            if (playerHealth <= 0)
-            {
-                gameOver = playerHealth <= 0;
-                Console.WriteLine("You died");
-            }
+
 
         }
     }
