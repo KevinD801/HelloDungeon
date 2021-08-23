@@ -4,7 +4,7 @@ How To Play
 Welp basically just only number to interact some times words.
 
 
-Hints:
+Riddle Hints:
 egg
 Friday the 13th
 
