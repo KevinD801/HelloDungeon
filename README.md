@@ -5,8 +5,10 @@ Welp basically just only number to interact some times words.
 
 
 Riddle Hints:
-egg
-Friday the 13th
+
+Riddle 1: egg
+
+Riddle 3: Friday the 13th
 
 
 
